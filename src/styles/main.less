@@ -59,6 +59,7 @@
         list-style: none;
 
         a {
+          font-size: 16px;
           padding-left: 22px;
           text-decoration: none;
           text-transform: uppercase;
@@ -146,7 +147,7 @@
       }
 
       input:checked~.head_menu {
-        height: 210px;
+        height: 169px;
         transition: height 0.4s ease;
       }
     }
@@ -166,10 +167,11 @@
         text-align: center;
 
         li {
-          padding: 8px;
+          padding: 4px;
           margin: 0 auto;
 
           a {
+            font-size: 12px;
             color: #fff;
             padding: 0;
           }
@@ -185,10 +187,11 @@
   background-image: url(images/banner.jpg);
   background-position: top center;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .title {
-  padding: 200px 0;
+  padding: 160px 0 160px 0;
   text-align: center;
 
   h1,
@@ -230,4 +233,43 @@
   }
 }
 
-// media for title
+// media title for 768px
+
+@media screen and (max-width: 768px) {
+  .title {
+    padding: 100px 0 60px 0;
+
+    h1 {
+      font-size: 24px;
+      padding-bottom: 16px;
+    }
+
+    p {
+      font-size: 16px;
+      padding-bottom: 24px;
+    }
+
+    &_btn {
+      font-size: 12px;
+    }
+  }
+}
+
+// media title for 468px
+
+@media screen and (max-width: 468px) {
+  .title {
+    padding: 60px 0 30px 0;
+
+    h1 {
+
+      padding-bottom: 30px;
+    }
+
+    p {
+      display: none;
+    }
+
+
+  }
+}

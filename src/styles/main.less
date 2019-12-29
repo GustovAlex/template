@@ -25,7 +25,7 @@
 }
 
 .conteiner {
-  max-width: 75%;
+  max-width: 80%;
   margin: 0 auto;
 }
 
@@ -369,3 +369,47 @@
 }
 
 // styles for section services
+
+
+.services_title {
+  padding-top: 60px;
+  text-transform: uppercase;
+  font-size: @content_title_FontSize;
+  color: @header_title_color;
+}
+
+.services {
+  .DisplayFlex(space-between);
+  padding-top: 25px;
+
+  &_item {
+    width: 32%;
+  }
+
+  img {
+    text-align: center;
+  }
+
+  h4 {
+    .MyFonts("Roboto Slab", serif; bold);
+    font-size: @content_title_FontSize;
+    color: @header_title_color;
+    padding: 25px 0 18px 0;
+    text-transform: capitalize;
+  }
+
+  span {
+    .MyFonts("Roboto Slab", serif; 400);
+    color: #a8a8a8;
+    font-size: 13px;
+    text-transform: capitalize;
+  }
+
+  p {
+    .MyFonts("Roboto", sans-serif; 400);
+    color: #5c5c5c;
+    font-size: @content_text_FontSize;
+    padding: 30px 0 60px 0;
+    line-height: 2;
+  }
+}

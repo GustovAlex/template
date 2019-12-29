@@ -274,11 +274,12 @@
 
 .content {
   .DisplayFlex(space-between);
+  padding: 69px 0;
 
   &_item {
     width: 25%;
     text-align: center;
-    padding: 69px 0;
+
 
     &_img {
       display: block;
@@ -316,6 +317,51 @@
       color: #616161;
       box-sizing: border-box;
       padding: 0 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 1070px) {
+  .content {
+    .DisplayFlex(center);
+    flex-wrap: wrap;
+
+    &_item {
+      width: 30%;
+    }
+
+    p {
+      padding-bottom: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    .DisplayFlex(center);
+    flex-wrap: wrap;
+
+    &_item {
+      width: 40%;
+    }
+
+    p {
+      padding: 0 20px 30px 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 468px) {
+  .content {
+    .DisplayFlex(center);
+    flex-wrap: wrap;
+
+    &_item {
+      width: 240px;
+    }
+
+    p {
+      padding-bottom: 30px;
     }
   }
 }

@@ -5,13 +5,13 @@
 // font-family: "Roboto", sans-serif;
 
 .MyFonts(@DifferentFonts; @weight) {
-    font-family: @DifferentFonts;
-    font-weight: @weight;
+  font-family: @DifferentFonts;
+  font-weight: @weight;
 }
 
 .DisplayFlex(@JustifyContent) {
-    display: flex;
-    justify-content: @JustifyContent;
+  display: flex;
+  justify-content: @JustifyContent;
 }
 
 @header_title_color: #4e4e4e;
@@ -19,253 +19,303 @@
 @content_text_FontSize: 14px;
 
 * {
-    .MyFonts("Roboto Condensed", sans-serif; bold);
-    padding: 0;
-    margin: 0;
+  .MyFonts("Roboto Condensed", sans-serif; bold);
+  padding: 0;
+  margin: 0;
 }
 
 .conteiner {
-    max-width: 75%;
-    margin: 0 auto;
+  max-width: 75%;
+  margin: 0 auto;
 }
 
 // styles for header
 
 #home {
-    background: #e5e5e5;
+  background: #e5e5e5;
 }
 
 .head {
-    .DisplayFlex(space-between);
-    align-items: center;
-    height: 123px;
+  .DisplayFlex(space-between);
+  align-items: center;
+  height: 123px;
 
-    &_logo {
-        color: @header_title_color;
-        font-size: 40px;
-        text-transform: uppercase;
-    }
+  &_logo {
+    color: @header_title_color;
+    font-size: 40px;
+    text-transform: uppercase;
+  }
 
-    input {
-        display: none;
-    }
+  input {
+    display: none;
+  }
 
-    &_menu {
-        ul {
-            display: flex;
+  &_menu {
+    ul {
+      display: flex;
 
-            li {
-                list-style: none;
+      li {
+        list-style: none;
 
-                a {
-                    font-size: 16px;
-                    padding-left: 22px;
-                    text-decoration: none;
-                    text-transform: uppercase;
-                    color: @header_title_color;
-                    transition: color 0.2s ease-in;
+        a {
+          font-size: 16px;
+          padding-left: 22px;
+          text-decoration: none;
+          text-transform: uppercase;
+          color: @header_title_color;
+          transition: color 0.2s ease-in;
 
-                    &:hover {
-                        color: #4dc6af;
-                    }
-                }
-            }
+          &:hover {
+            color: #4dc6af;
+          }
         }
+      }
     }
+  }
 }
 
 // media for header
 
 @media screen and (max-width: 768px) {
-    .conteiner {
-        max-width: 100%;
-        margin: 0 auto;
+  .conteiner {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  #home {
+    background: none;
+  }
+
+  .head {
+    .DisplayFlex(unset);
+    flex-direction: column;
+    padding: 0;
+
+    &_logo {
+      font-size: 30px;
+      text-align: center;
+      padding-top: 35px;
+      width: 100%;
+      background: #e5e5e5;
+      padding-bottom: 28px;
     }
 
-    #home {
-        background: none;
+    &_burger {
+      width: 100%;
+      background: #555555;
+      height: 54px;
+
+      label {
+        display: block;
+        width: 26px;
+        height: 6px;
+        background: #aaaaaa;
+        margin-top: 25px;
+        float: right;
+        margin-right: 20px;
+        position: relative;
+
+        &::after,
+        &::before {
+          content: "";
+          display: block;
+          width: 26px;
+          height: 6px;
+          background: #aaaaaa;
+          position: absolute;
+        }
+
+        &::before {
+          top: -10px;
+        }
+
+        &::after {
+          top: 10px;
+        }
+
+        .wrap {
+          width: 26px;
+          height: 26px;
+          display: block;
+          background: none;
+          cursor: pointer;
+          position: absolute;
+          top: -10px;
+          z-index: 3;
+        }
+      }
+
+      input:checked~.head_menu {
+        height: 169px;
+        transition: height 0.4s ease;
+      }
     }
 
-    .head {
-        .DisplayFlex(unset);
-        flex-direction: column;
-        padding: 0;
+    &_menu {
+      transition: height 0.4s ease;
+      width: 100%;
+      background: #555555;
+      opacity: 85%;
+      margin-top: 54px;
+      height: 0px;
+      overflow: hidden;
+      position: relative;
 
-        &_logo {
-            font-size: 30px;
-            text-align: center;
-            padding-top: 35px;
-            width: 100%;
-            background: #e5e5e5;
-            padding-bottom: 28px;
+      ul {
+        display: block;
+        text-align: center;
+
+        li {
+          padding: 4px;
+          margin: 0 auto;
+
+          a {
+            font-size: 12px;
+            color: #fff;
+            padding: 0;
+          }
         }
-
-        &_burger {
-            width: 100%;
-            background: #555555;
-            height: 54px;
-
-            label {
-                display: block;
-                width: 26px;
-                height: 6px;
-                background: #aaaaaa;
-                margin-top: 25px;
-                float: right;
-                margin-right: 20px;
-                position: relative;
-
-                &::after,
-                &::before {
-                    content: "";
-                    display: block;
-                    width: 26px;
-                    height: 6px;
-                    background: #aaaaaa;
-                    position: absolute;
-                }
-
-                &::before {
-                    top: -10px;
-                }
-
-                &::after {
-                    top: 10px;
-                }
-
-                .wrap {
-                    width: 26px;
-                    height: 26px;
-                    display: block;
-                    background: none;
-                    cursor: pointer;
-                    position: absolute;
-                    top: -10px;
-                    z-index: 3;
-                }
-            }
-
-            input:checked ~ .head_menu {
-                height: 169px;
-                transition: height 0.4s ease;
-            }
-        }
-
-        &_menu {
-            transition: height 0.4s ease;
-            width: 100%;
-            background: #555555;
-            opacity: 85%;
-            margin-top: 54px;
-            height: 0px;
-            overflow: hidden;
-            position: relative;
-
-            ul {
-                display: block;
-                text-align: center;
-
-                li {
-                    padding: 4px;
-                    margin: 0 auto;
-
-                    a {
-                        font-size: 12px;
-                        color: #fff;
-                        padding: 0;
-                    }
-                }
-            }
-        }
+      }
     }
+  }
 }
 
 // styles for title
 
 .title_background {
-    background-image: url(images/banner.jpg);
-    background-position: top center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-image: url(images/banner.jpg);
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .title {
-    padding: 160px 0 160px 0;
-    text-align: center;
+  padding: 160px 0 160px 0;
+  text-align: center;
 
-    h1,
-    p {
-        .MyFonts("Roboto Slab", serif; bold);
+  h1,
+  p {
+    .MyFonts("Roboto Slab", serif; bold);
+  }
+
+  h1 {
+    font-size: 40px;
+    color: #f3f3f3;
+    padding-bottom: 40px;
+  }
+
+  p {
+    font-size: 32px;
+    color: #a8a8a8;
+    padding-bottom: 40px;
+  }
+
+  &_btn {
+    .MyFonts("Roboto Condensed", sans-serif; 400);
+    box-sizing: border-box;
+    padding-top: 13px;
+    margin: 0 auto;
+    border-bottom: 5px solid #3678a3;
+    height: 45px;
+    width: 140px;
+    border-radius: 5px;
+    background: #3f8dbf;
+    color: #fff;
+    font-size: @content_text_FontSize;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s ease-in;
+
+    &:hover {
+      background: #326e94;
     }
+  }
+}
+
+// media for title for 768px
+
+@media screen and (max-width: 768px) {
+  .title {
+    padding: 100px 0 60px 0;
 
     h1 {
-        font-size: 40px;
-        color: #f3f3f3;
-        padding-bottom: 40px;
+      font-size: 24px;
+      padding-bottom: 16px;
     }
 
     p {
-        font-size: 32px;
-        color: #a8a8a8;
-        padding-bottom: 40px;
+      font-size: 16px;
+      padding-bottom: 24px;
     }
 
     &_btn {
-        .MyFonts("Roboto Condensed", sans-serif; 400);
-        box-sizing: border-box;
-        padding-top: 13px;
-        margin: 0 auto;
-        border-bottom: 5px solid #3678a3;
-        height: 45px;
-        width: 140px;
-        border-radius: 5px;
-        background: #3f8dbf;
-        color: #fff;
-        font-size: @content_text_FontSize;
-        text-transform: uppercase;
-        cursor: pointer;
-        transition: background 0.3s ease-in;
-
-        &:hover {
-            background: #326e94;
-        }
+      font-size: 12px;
     }
+  }
 }
 
-// media title for 768px
-
-@media screen and (max-width: 768px) {
-    .title {
-        padding: 100px 0 60px 0;
-
-        h1 {
-            font-size: 24px;
-            padding-bottom: 16px;
-        }
-
-        p {
-            font-size: 16px;
-            padding-bottom: 24px;
-        }
-
-        &_btn {
-            font-size: 12px;
-        }
-    }
-}
-
-// media title for 468px
+// media for title for 468px
 
 @media screen and (max-width: 468px) {
-    .title {
-        padding: 60px 0 30px 0;
+  .title {
+    padding: 60px 0 30px 0;
 
-        h1 {
-            padding-bottom: 30px;
-        }
-
-        p {
-            display: none;
-        }
+    h1 {
+      padding-bottom: 30px;
     }
+
+    p {
+      display: none;
+    }
+  }
+}
+
+// styles for section journal
+
+.content {
+  .DisplayFlex(space-between);
+
+  &_item {
+    width: 25%;
+    text-align: center;
+    padding: 69px 0;
+
+    &_img {
+      display: block;
+      margin: 0 auto;
+      height: 90px;
+      width: 90px;
+    }
+
+    &_img:hover {
+      img {
+        animation: RotateIcon 0.5s ease-in-out infinite;
+
+        @keyframes RotateIcon {
+          0% {
+            transform: rotateY(0deg);
+          }
+
+          100% {
+            transform: rotateY(180deg);
+          }
+        }
+      }
+    }
+
+    h2 {
+      .MyFonts("Roboto Slab", serif; bold);
+      font-size: @content_title_FontSize;
+      color: @header_title_color;
+      padding: 30px 0 25px 0;
+    }
+
+    p {
+      .MyFonts("Roboto", sans-serif; 400);
+      font-size: @content_text_FontSize;
+      color: #616161;
+      box-sizing: border-box;
+      padding: 0 10px;
+    }
+  }
 }

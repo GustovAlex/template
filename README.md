@@ -58,25 +58,3 @@ After creating your own repo from template, just clone it and use.
 ##### Project will auto reload on every files save.
 
 ##### TO EXIT, in terminal PRESS Ctrl+C.
-
-### How to write code:
-
-1. You should work ONLY in /src folder
-2. All html code should be in /src/index.html
-3. All styles must be in /src/styles/main.less. If you want to add extra styles file, add it in src/styles folder and import it into main.less
-4. All fonts should be placed into /src/fonts and imported into main.less from this folder, e.g.:
-
-```bash
-    # in /src/styles/main.less
-    @font-face {
-        font-family: "christmas";
-        src: url("../fonts/christmaseve.ttf");
-    }
-```
-
-5. All images(png, img, svg) should be placed into /src/images and imported from this folder, e.g:
-
-```bash
-    # in src/index.html
-    <img src="./images/testImage.jpg" alt="test image" />
-```
